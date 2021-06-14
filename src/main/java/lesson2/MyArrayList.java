@@ -2,17 +2,17 @@ package lesson2;
 
 public class MyArrayList<T> {
     private int size = 0;
-    private Object[] array;
+    private T[] array;
     private int capacity = 10;
 
     public MyArrayList() {
-        this.array = new Object[capacity];
+        this.array = (T[]) new Object[capacity];
     }
 
     public void add(final T item){
         if(size == capacity){
             capacity *= 2;
-            final Object[] newArray = new Object[capacity];
+            final T[] newArray = (T[]) new Object[capacity];
             System.arraycopy(array, 0, newArray, 0, size);
             array = newArray;
         }
